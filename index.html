@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Grid Template Areas</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item2 dead1">
+    </div>
+    <div class="item2 dead2">
+    </div>
+    <div class="item diceArea">
+      <div class="bb10">
+        <img id="place1" src="">
+        <img id="place2" src="">
+        <img id="place3" src="">
+        <img id="place4" src="">
+        <img id="place5" src="">
+        <img id="place6" src="">
+        <img id="place7" src="">
+        <img id="place8" src="">
+        <img id="place9" src="">
+      </div>
+    </div>
+    <div class="item item3">
+    </div>
+    <div class="item results">
+      <div class="bb8">        
+        <div class="resultsTitle">
+            <h1>RÉSULTATS</h1>
+        </div>
+        <div class="resultsDice">
+            <h2>Dés</h2>
+            <div class="resultsDiceContainer" >
+              <h3 id='dice' >~</h3>
+            </div>
+
+            <!-- <h3 id='D1' >5 - 5 - 9 - 2 - 1</h3> -->
+        </div>
+        <div class="resultsSum">
+            <h2>Somme</h2>
+            <h3 id="sum" >~</h3>
+        </div>
+        <div class="resultsAverage">
+            <h2>Moyenne</h2>
+            <h3 id="average" >~</h3>
+        </div>
+        <div class="resultThrow">
+            <h2>Nb. de lancers</h2>
+            <h3 id="nbThrow" >~</h3>
+        </div>
+        <div class="resultsTotal">
+            <h2>Moyenne totale</h2>
+            <h3 id="totalAverage" >~</h3>
+        </div>
+      </div>
+    </div>
+    <div class="item stats">
+      <div class="bb11">
+        <div class="statsTitle">
+          <h2>Répartition</h2>
+      </div>
+      <div class="statsD1 neumoBox">
+        <p id="percentD1" >~</p>
+        <p id="countD1" >~</p>
+        <p>D1</p>
+      </div>
+      <div class="statsD2 neumoBox">
+        <p id="percentD2" >~</p>
+        <p id="countD2" >~</p>
+        <p>D2</p>
+      </div>
+      <div class="statsD3 neumoBox">
+        <p id="percentD3" >~</p>
+        <p id="countD3" >~</p>
+        <p>D3</p>
+      </div>
+      <div class="statsD4 neumoBox">
+        <p id="percentD4" >~</p>
+        <p id="countD4" >~</p>
+        <p>D4</p>
+      </div>
+      <div class="statsD5 neumoBox">
+        <p id="percentD5" >~</p>
+        <p id="countD5" >~</p>
+        <p>D5</p>
+      </div>
+      <div class="statsD6 neumoBox">
+        <p id="percentD6" >~</p>
+        <p id="countD6" >~</p>
+        <p>D6</p>
+      </div>
+      <div class="statsD7 neumoBox">
+        <p id="percentD7" >~</p>
+        <p id="countD7" >~</p>
+        <p>D7</p>
+      </div>
+      <div class="statsD9 neumoBox">
+        <p id="percentD9" >~</p>
+        <p id="countD9" >~</p>
+        <p>D9</p>
+      </div>
+      <div class="statsD8">
+        <p id="percentD8" >~</p>
+        <p id="countD8" >~</p>
+        <p>D8</p>
+      </div>
+        <div class="resetButton statsButton">
+            <button class="btn" onclick="resetButton()">RÉINITIALISER</button>
+        </div>
+      </div>
+    </div>
+    <div class="item throw">
+      <div class="bb9">
+        <div class="diceNumber">
+            <h2>Nombre de dés</h2>
+        </div>
+        <div class="slideContainer">
+            <input type="range" min="1" max="9" value="6" class="slider sliderDice">
+        </div>
+        <div class="sliderScale">
+          <h2>1</h2>
+          <h2>2</h2>
+          <h2>3</h2>
+          <h2>4</h2>
+          <h2>5</h2>
+          <h2>6</h2>
+          <h2>7</h2>
+          <h2>8</h2>
+          <h2>9</h2>
+        </div>
+        <div class="sideNumber">
+            <h2>Nombre de faces</h2>
+        </div>
+        <div class="slideContainer">
+            <input type="range" min="6" max="9" value="6" class="slider sliderFace">
+        </div>
+        <div class="sliderScale">
+          <h2>6</h2>
+          <h2>7</h2>
+          <h2>8</h2>
+          <h2>9</h2>
+        </div>
+        <div class="throwButton">
+          <button class="btn" onclick="myRandom()">LANCER</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
