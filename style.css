@@ -1,6 +1,7 @@
 :root {
   --yellow: #ffc600;
   --light: #efeeee;
+  --white: #ffffff;
   --black: #272727;
   --bleu: #3742FA;
   --grey: #707070;
@@ -8,76 +9,49 @@
   --shadowBlack: #00000025;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
 h1{
-  font-size: 30px;
+  font-size: 25px;
   color: var(--bleu);
 }
 h2{
-  font-size: 20px;
-  color: var(--black);
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--grey);
 }
 h3{
-  font-size: 20px;
+  font-size: 18px;
   color: var(--bleu);
 }
 h4{
   font-size: 30px;
-  color: #ffffff;    
+  color: var(--white);
   background-color: var(--bleu);
   border-radius: 50px;
   width: 150px;
   height: 35px;
 }
+
 p{
   font-size: 15px;
-  color: var(--grey);
+  color: var(--bleu);
+  opacity: 0.6;
 }
 html {
-  /* border-box box model allows us to add padding and border to our elements without increasing their size */
-  box-sizing: border-box;
-  /* A system font stack so things load nice and quick! */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-weight: 900;
-  font-size: 10px;
-  color: var(--black);
-  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+  font-family: Comfortaa ;
 }
 
-/*
-  WAT IS THIS?!
-  We inherit box-sizing: border-box; from our <html> selector
-  Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector
-*/
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
 
 body {
-  /* background-image: url("./images/topography.svg"),
-    linear-gradient(110deg, #f93d66, #6d47d9); */
   background-color: var(--light);
   background-size: 340px, auto;
   min-height: calc(100vh - 100px);
-  /* margin-top: 50px; */
-  /* background: white; */
   background-attachment: fixed;
   letter-spacing: -1px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0 0 5px 0;
-}
-/* Each item in our grid will contain numbers */
 .item {
-  /* We center the contents of these items. You can also do this with flexbox too! */
   display: grid;
   justify-content: center;
   align-items: center;
@@ -87,20 +61,48 @@ h6 {
   background-color: var(--light);
 }
 
-.item p {
-  margin: 0 0 5px 0;
+
+.btn:focus {
+  outline:none !important;
+}
+
+.neumorphic-btn {
+  font-size: 20px;
+  border: none;
+  font-family:Quicksand ;
+  padding: 10px 40px 5px 40px;
+  border-radius: 40px;
+  color: var(--bleu);
+  background-color: var(--light);
+  box-shadow: 7px 7px 15px rgba(55, 84, 170, .15),
+              -7px -7px 20px rgba(255, 255, 255, 1),
+              inset 0px 0px 4px rgba(255, 255, 255, .2),
+              inset 7px 7px 15px rgba(55, 84, 170, 0),
+              inset -7px -7px 20px rgba(255, 255, 255, 0),
+              0px 0px 4px rgba(255, 255, 255, 0) !important;
+  transition: box-shadow .25s ease !important;
+}
+
+.neumorphic-btn:active {  
+  box-shadow: 7px 7px 15px rgba(55, 84, 170, .15),
+              -7px -7px 20px rgba(255, 255, 255, 1),
+              inset 0px 0px 4px rgba(255, 255, 255, 0),
+              inset 7px 7px 15px rgba(55, 84, 170, .15),
+              inset -7px -7px 20px rgba(255, 255, 255, 1),
+              0px 0px 4px rgba(255, 255, 255, .2) !important;
 }
 
 
-.btn {
+
+.btn2 {
   min-width: 150px;
   padding: 10px 10px;
   margin: 20px;
+  /* font-family:Quicksand ; */
   /* background: var(--light); */
   background: var(--bleu);
   border: none;
   border-radius: 25px;
-  /* color: var(--bleu); */
   color: white;
   font-size: 15px;
   font-weight: bold;
@@ -110,11 +112,6 @@ h6 {
     4px 4px 10px 0 var(--shadowBlack);
 }
 
-.btn:hover {
-  box-shadow: inset -7px -7px 20px 0 #ffffff25,
-    inset 7px 7px 20px 0 var(--shadowBlack);
-}
-
 
 
 .container {
@@ -122,12 +119,17 @@ h6 {
   grid-gap: 20px;
   grid-template-columns: 1fr 415px 120px 415px 1fr;
   grid-template-rows: repeat(5, 125px);
+  grid-auto-gap: 0px;
+  overflow-y: hidden;
+  max-width: 100%;
+  overflow: hidden;
   grid-template-areas:
-    "dead1  diceArea   middlebar results dead2"
-    "dead1  diceArea   middlebar results dead2"
-    "dead1  diceArea    middlebar stats dead2"
-    "dead1  throw    middlebar stats dead2"
-    "dead1  throw    middlebar stats dead2"
+    "dead1  diceArea    middlebar results dead2"
+    "dead1  diceArea    middlebar results dead2"
+    "dead1  diceArea    middlebar stats   dead2"
+    "dead1  throw       middlebar stats   dead2"
+    "dead1  throw       middlebar stats   dead2";
+
 }
 
 .throw {
@@ -140,6 +142,16 @@ h6 {
 
 .dead2 {
   grid-area: dead2;
+}
+
+.logoArea {
+  grid-area: logo;
+}
+
+.logo {
+  display: grid;
+  justify-content: center;
+  max-width: 120px;
 }
 
 .diceArea {
@@ -174,15 +186,19 @@ h6 {
 }
 
 
-.bb8{
+.gridResults{
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(3, 65px);
+  grid-template-rows: repeat(3, 100px);
   text-align: center;
   align-items: center;
 }
 
 /* Results grid */
+
+.results h2{
+  padding-bottom: 15px;
+}
 
 .resultsTitle{
   grid-column: 1 / -1;
@@ -191,11 +207,6 @@ h6 {
 .resultsDice{
   grid-column: 1 / 3;
   grid-row: 2 / 3;
-}
-
-.resultsDiceContainer{
-  display: flex;  
-  justify-content: center;
 }
 
 .resultsSum{
@@ -217,7 +228,7 @@ h6 {
 }
 
 
-.bb9{
+.gridSliders{
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(6, 35px) 60px;
@@ -239,7 +250,7 @@ h6 {
   display: flex;
   justify-content: space-between;
   width: 400px;
-  opacity: 0.2;
+  opacity: 0.4;
 }
 
 .throwButton{
@@ -247,39 +258,95 @@ h6 {
   align-items: center;
 }
 
-.bb10{
+
+.gridDiceExt{
+  width: 414px;
+  height: 414px;
+  border-radius: 28px;
+  background: var(--light);
+  box-shadow: 8px 8px 16px #d9d9d9, 
+              -8px -8px 16px #ffffff;              
+
+}
+
+
+.gridDice{
   display: grid;
-  grid-template-columns: repeat(3, 138px);
-  grid-template-rows: repeat(3, 138px);
+  top: 7px;
+  left: 7px;
+  grid-template-columns: repeat(3, 133px);
+  grid-template-rows: repeat(3, 133px);
   text-align: center;
   align-items: center;
   justify-items: center;
-  width: 100%;
-  border-radius: 28px;
-  background: #EFEEEE;
-  box-shadow: inset 8px 8px 16px #cbcaca, 
-              inset -8px -8px 16px #ffffff;
+  width: 400px;
+  height: 400px;
+  border-radius: 22px;
+  background: var(--light);
+  box-shadow: inset 8px 8px 16px #d9d9d9, 
+              inset -8px -8px 16px #ffffff;              
+  position: relative;
 }
+
+.place1mod{
+  position: absolute;
+}
+
+.place2mod{
+  width: 50%;
+  position: absolute;
+  left: 0px;
+}
+
+.place3mod{
+  width: 50%;
+  position: absolute;
+  right: 0px;
+}
+
+.overlay {
+  position: absolute;
+  font-size: 300px;
+  padding-top: 30px;
+  color: var(--bleu);
+  justify-content: center;
+  font-weight: 100;
+  opacity: 0.2 ;
+  z-index: 10;
+}
+
 
 /* Stats grid */
 
 .neumoBox{
+  display: flex;
+  grid-row: 1 / 2;
+  flex-direction: column;
+  height: 240px;
   border-radius: 20px;
   width: 28px;
-  background: #EFEEEE;
+  background: var(--light);
+  margin-bottom: 10px;
   box-shadow: inset 5px 5px 7px #dcdbdb, 
               inset -5px -5px 7px #ffffff;
+  
+  justify-content: flex-end;
+  align-self: flex-start;
 }
 
-.bb11{
+.gridStats{
   display: grid;
   grid-template-columns: repeat(10, 41px);
-  grid-template-rows: repeat(3, 138px);
+  grid-template-rows: 78px 259px 78px;
   text-align: center;
   align-items: center;
   justify-items: center;
   width: 100%;
 
+}
+
+.gridStats :not(.statsTitle) h2{
+  opacity: 0.4;
 }
 
 .statsTitle{
@@ -290,6 +357,64 @@ h6 {
 .statsButton{
   grid-column: -1 / 1 ;
   grid-row: 3 / 4 ;
+  margin-top: 22px;
+}
+
+.statsScale{
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.statsScale h2{
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.statsScale p{
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--grey);
+}
+
+
+.relative{
+  display: grid;
+  grid-template-rows: 240px 30px 15px ;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.blueBar{
+  width: 28px;
+  height: 0px;
+  text-justify: center;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  grid-row: 1 / 2;
+  bottom: 0px;
+  position: absolute;
+  border-radius: 20px;
+  background: linear-gradient(110deg, #586aff, #272fb2);
+}
+
+.diceNB{
+  grid-row: 2 / 3;
+}
+
+.percent{  
+  position: absolute;
+  top: -35px;
+}
+
+.count{  
+  grid-row: 3 / 4;
+  bottom: 0px;
 }
 
 .statsD1{

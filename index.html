@@ -5,123 +5,180 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Grid Template Areas</title>
+  <title>Dice design</title>
 </head>
 
 <body>
+  <audio class="oneDie">
+    <source src="sounds/diceSound.m4a" type="audio/mpeg">
+  </audio>
+  <audio class="manyDice">
+    <source src="sounds/diceSound2.m4a" type="audio/mpeg">
+  </audio>
   <div class="container">
     <div class="item2 dead1">
     </div>
     <div class="item2 dead2">
     </div>
     <div class="item diceArea">
-      <div class="bb10">
-        <img id="place1" src="">
-        <img id="place2" src="">
-        <img id="place3" src="">
-        <img id="place4" src="">
-        <img id="place5" src="">
-        <img id="place6" src="">
-        <img id="place7" src="">
-        <img id="place8" src="">
-        <img id="place9" src="">
+      <div class="gridDiceExt">
+        <div class="gridDice">
+          <div class="overlay"></div>
+          <img class="place1" src="">
+          <img class="place2" src="">
+          <img class="place3" src="">
+          <img class="place4" src="">
+          <img class="place5" src="">
+          <img class="place6" src="">
+          <img class="place7" src="">
+          <img class="place8" src="">
+          <img class="place9" src="">
+          <img class="place1mod" src="">
+          <img class="place2mod" src="">
+          <img class="place3mod" src="">
+        </div>
+      </div>
+    </div>
+    <div class="logoArea">
+      <div class="logo">
+        <img src="images/logo.svg" alt="">
       </div>
     </div>
     <div class="item item3">
     </div>
     <div class="item results">
-      <div class="bb8">        
+      <div class="gridResults">        
         <div class="resultsTitle">
             <h1>RÉSULTATS</h1>
         </div>
         <div class="resultsDice">
             <h2>Dés</h2>
-            <div class="resultsDiceContainer" >
-              <h3 id='dice' >~</h3>
-            </div>
-
-            <!-- <h3 id='D1' >5 - 5 - 9 - 2 - 1</h3> -->
+            <h3 class="dice" >~</h3>
         </div>
         <div class="resultsSum">
             <h2>Somme</h2>
-            <h3 id="sum" >~</h3>
+            <h3 class="sum" >~</h3>
         </div>
         <div class="resultsAverage">
             <h2>Moyenne</h2>
-            <h3 id="average" >~</h3>
+            <h3 class="average" >~</h3>
         </div>
         <div class="resultThrow">
             <h2>Nb. de lancers</h2>
-            <h3 id="nbThrow" >~</h3>
+            <h3 class="nbThrow" >~</h3>
         </div>
         <div class="resultsTotal">
             <h2>Moyenne totale</h2>
-            <h3 id="totalAverage" >~</h3>
+            <h3 class="totalAverage" >~</h3>
         </div>
       </div>
     </div>
     <div class="item stats">
-      <div class="bb11">
+      <div class="gridStats">
         <div class="statsTitle">
           <h2>Répartition</h2>
       </div>
-      <div class="statsD1 neumoBox">
-        <p id="percentD1" >~</p>
-        <p id="countD1" >~</p>
-        <p>D1</p>
+      <div class="statsScale">
+        <p>en %</p>
+        <h2>100</h2>
+        <h2>75</h2>
+        <h2>50</h2>
+        <h2>25</h2>
+        <h2>0</h2>
       </div>
-      <div class="statsD2 neumoBox">
-        <p id="percentD2" >~</p>
-        <p id="countD2" >~</p>
-        <p>D2</p>
+      <div class="statsD1 relative">
+        <div class="neumoBox">
+        </div>
+        <div class="blueBar blueBar1">
+          <p class="percent percentD1" ></p>
+        </div>
+        <p class="count countD1" >~</p>
+        <h2 class="diceNB">D1</h2>
       </div>
-      <div class="statsD3 neumoBox">
-        <p id="percentD3" >~</p>
-        <p id="countD3" >~</p>
-        <p>D3</p>
+      <div class="statsD2 relative">
+        <div class="neumoBox">
+        </div>
+        <div class="blueBar blueBar2">
+          <p class="percent percentD2" ></p>
+        </div>
+        <p class="count countD2" >~</p>
+        <h2 class="diceNB">D2</h2>
       </div>
-      <div class="statsD4 neumoBox">
-        <p id="percentD4" >~</p>
-        <p id="countD4" >~</p>
-        <p>D4</p>
+      <div class="statsD3 relative">
+        <div class="neumoBox">
+        </div>
+        <div class="blueBar blueBar3">
+          <p class="percent percentD3" ></p>
+        </div>
+        <p class="count countD3" >~</p>
+        <h2 class="diceNB">D3</h2>
       </div>
-      <div class="statsD5 neumoBox">
-        <p id="percentD5" >~</p>
-        <p id="countD5" >~</p>
-        <p>D5</p>
+      <div class="statsD4 relative">
+        <div class="neumoBox">
+        </div>
+        <div class="blueBar blueBar4">
+          <p class="percent percentD4" ></p>
+        </div>
+        <p class="count countD4" >~</p>
+        <h2 class="diceNB">D4</h2>
       </div>
-      <div class="statsD6 neumoBox">
-        <p id="percentD6" >~</p>
-        <p id="countD6" >~</p>
-        <p>D6</p>
+      <div class="statsD5 relative">
+        <div class="neumoBox">
+        </div>
+        <div class="blueBar blueBar5">
+          <p class="percent percentD5" ></p>
+        </div>
+        <p class="count countD5" >~</p>
+        <h2 class="diceNB">D5</h2>
       </div>
-      <div class="statsD7 neumoBox">
-        <p id="percentD7" >~</p>
-        <p id="countD7" >~</p>
-        <p>D7</p>
+      <div class="statsD6 relative">
+        <div class="neumoBox">
+        </div>
+        <div class="blueBar blueBar6">
+          <p class="percent percentD6" ></p>
+        </div>
+        <p class="count countD6" >~</p>
+        <h2 class="diceNB">D6</h2>
       </div>
-      <div class="statsD9 neumoBox">
-        <p id="percentD9" >~</p>
-        <p id="countD9" >~</p>
-        <p>D9</p>
+      <div class="statsD7 relative">
+        <div class="neumoBox">
+        </div>
+        <div class="blueBar blueBar7">
+          <p class="percent percentD7" ></p>
+        </div>
+        <p class="count countD7" >~</p>
+        <h2 class="diceNB">D7</h2>
       </div>
-      <div class="statsD8">
-        <p id="percentD8" >~</p>
-        <p id="countD8" >~</p>
-        <p>D8</p>
+      <div class="statsD8 relative">
+        <div class="neumoBox">
+        </div>
+        <div class="blueBar blueBar8">
+          <p class="percent percentD8" ></p>
+        </div>
+        <p class="count countD8" >~</p>
+        <h2 class="diceNB">D8</h2>
+      </div>
+      <div class="statsD9 relative">
+        <div class="neumoBox">
+        </div>
+        <div class="blueBar blueBar9">
+          <p class="percent percentD9" ></p>
+        </div>
+        <p class="count countD9" >~</p>
+        <h2 class="diceNB">D9</h2>
       </div>
         <div class="resetButton statsButton">
-            <button class="btn" onclick="resetButton()">RÉINITIALISER</button>
+            <button class="btn neumorphic-btn" onclick="resetButton()">RÉINITIALISER</button>
         </div>
       </div>
     </div>
     <div class="item throw">
-      <div class="bb9">
+      <div class="gridSliders">
         <div class="diceNumber">
             <h2>Nombre de dés</h2>
         </div>
         <div class="slideContainer">
-            <input type="range" min="1" max="9" value="6" class="slider sliderDice">
+            <input type="range" min="1" max="9" value="1" class="slider sliderDice">
         </div>
         <div class="sliderScale">
           <h2>1</h2>
@@ -138,7 +195,8 @@
             <h2>Nombre de faces</h2>
         </div>
         <div class="slideContainer">
-            <input type="range" min="6" max="9" value="6" class="slider sliderFace">
+            <input type="range" min="6" max="9" value="6" class="slider sliderFace"> 
+            <!-- flexible code, we can modify the min value -->
         </div>
         <div class="sliderScale">
           <h2>6</h2>
@@ -147,7 +205,7 @@
           <h2>9</h2>
         </div>
         <div class="throwButton">
-          <button class="btn" onclick="myRandom()">LANCER</button>
+          <button class="btn neumorphic-btn" onclick="myRandom()">LANCER</button>
         </div>
       </div>
     </div>
