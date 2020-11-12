@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500&display=swap');
+
+
 :root {
   --yellow: #ffc600;
   --light: #efeeee;
@@ -9,7 +12,6 @@
   --shadowBlack: #00000025;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500&display=swap');
 
 h1{
   font-size: 25px;
@@ -70,7 +72,6 @@ body {
 .neumorphic-btn {
   font-size: 20px;
   border: none;
-  font-family:Quicksand ;
   padding: 10px 40px 5px 40px;
   border-radius: 40px;
   color: var(--bleu);
@@ -99,7 +100,6 @@ body {
   min-width: 150px;
   padding: 10px 10px;
   margin: 20px;
-  /* font-family:Quicksand ; */
   /* background: var(--light); */
   background: var(--bleu);
   border: none;
